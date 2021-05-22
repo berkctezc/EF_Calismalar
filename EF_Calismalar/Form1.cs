@@ -103,5 +103,23 @@ namespace EF_Calismalar
             db.SaveChanges();
             MessageBox.Show("Güncelleme başarılı");
         }
+
+        private void BtnProcedure_Click(object sender, EventArgs e)
+        {
+            //proc calistirmak
+            dataGridView1.DataSource = db.notlistesi();
+        }
+
+        private void BtnBul_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = db.tbl_students.Where(x => x.Name == TxtAD.Text
+            | x.Surname==TxtSOYAD.Text
+            ).ToList();
+        }
+
+        private void TxtAD_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -29,7 +29,7 @@ namespace EF_Calismalar
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnOgrenciListele = new System.Windows.Forms.Button();
             this.BtnKaydet = new System.Windows.Forms.Button();
             this.BtnSil = new System.Windows.Forms.Button();
@@ -66,6 +66,7 @@ namespace EF_Calismalar
             this.BtnNotListele = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.BtnDersKaydet = new System.Windows.Forms.Button();
+            this.BtnProcedure = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -125,6 +126,7 @@ namespace EF_Calismalar
             this.BtnBul.TabIndex = 5;
             this.BtnBul.Text = "Bul";
             this.BtnBul.UseVisualStyleBackColor = true;
+            this.BtnBul.Click += new System.EventHandler(this.BtnBul_Click);
             // 
             // groupBox1
             // 
@@ -185,6 +187,7 @@ namespace EF_Calismalar
             this.TxtAD.Name = "TxtAD";
             this.TxtAD.Size = new System.Drawing.Size(100, 20);
             this.TxtAD.TabIndex = 17;
+            this.TxtAD.TextChanged += new System.EventHandler(this.TxtAD_TextChanged);
             // 
             // label2
             // 
@@ -404,10 +407,10 @@ namespace EF_Calismalar
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -429,6 +432,17 @@ namespace EF_Calismalar
             this.BtnDersKaydet.UseVisualStyleBackColor = true;
             this.BtnDersKaydet.Click += new System.EventHandler(this.BtnDersKaydet_Click);
             // 
+            // BtnProcedure
+            // 
+            this.BtnProcedure.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BtnProcedure.Location = new System.Drawing.Point(239, 377);
+            this.BtnProcedure.Name = "BtnProcedure";
+            this.BtnProcedure.Size = new System.Drawing.Size(69, 37);
+            this.BtnProcedure.TabIndex = 26;
+            this.BtnProcedure.Text = "Procedure";
+            this.BtnProcedure.UseVisualStyleBackColor = true;
+            this.BtnProcedure.Click += new System.EventHandler(this.BtnProcedure_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -436,6 +450,7 @@ namespace EF_Calismalar
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1018, 470);
+            this.Controls.Add(this.BtnProcedure);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BtnNotListele);
             this.Controls.Add(this.BtnDersListele);
@@ -497,6 +512,7 @@ namespace EF_Calismalar
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button BtnDersKaydet;
+        private System.Windows.Forms.Button BtnProcedure;
     }
 }
 
