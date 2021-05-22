@@ -28,5 +28,6 @@ namespace EF_Calismalar
         public virtual DbSet<tbl_grades> tbl_grades { get; set; }
         public virtual DbSet<tbl_lessons> tbl_lessons { get; set; }
         public virtual DbSet<tbl_students> tbl_students { get; set; }
+        public virtual DbSet<tbl_clubs> tbl_clubs { get; set; }
     }
 }
