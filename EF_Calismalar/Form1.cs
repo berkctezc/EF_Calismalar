@@ -60,10 +60,7 @@ namespace EF_Calismalar
             dataGridView1.DataSource = query.ToList();
         }
 
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e) { }
 
         private void BtnKaydet_Click(object sender, EventArgs e)
         {
@@ -113,13 +110,63 @@ namespace EF_Calismalar
         private void BtnBul_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = db.tbl_students.Where(x => x.Name == TxtAD.Text
-            | x.Surname==TxtSOYAD.Text
+            | x.Surname == TxtSOYAD.Text
             ).ToList();
         }
 
         private void TxtAD_TextChanged(object sender, EventArgs e)
         {
+            string aranan = TxtAD.Text;
+            var values = from item in db.tbl_students where item.Name.Contains(aranan) select item;
+            dataGridView1.DataSource = values.ToList();
+        }
 
+        private void TxtSOYAD_TextChanged(object sender, EventArgs e)
+        {
+            string aranan = TxtSOYAD.Text;
+            var values = from item in db.tbl_students where item.Surname.Contains(aranan) select item;
+            dataGridView1.DataSource = values.ToList();
+        }
+
+        private void LinqEntity_Click(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+            {
+                dataGridView1.DataSource = db.tbl_students.OrderBy(p => p.Name).ToList();
+            }
+            if (radioButton2.Checked)
+            {
+                dataGridView1.DataSource = db.tbl_students.OrderByDescending(p => p.Name).ToList();
+            }
+            if (radioButton3.Checked)
+            {
+                dataGridView1.DataSource = db.tbl_students.OrderBy(p => p.Name).Take(3).ToList();
+            }
+            if (radioButton4.Checked)
+            {
+                int id = Convert.ToInt32(TxtOgrenciID.Text);
+                dataGridView1.DataSource = db.tbl_students
+                    .Where(p => p.Id == id).ToList();
+            }
+            if (radioButton5.Checked)
+            {
+                dataGridView1.DataSource = db.tbl_students
+                    .Where(p => p.Name.StartsWith(TxtAD.Text)).ToList();
+            }
+            if (radioButton6.Checked)
+            {
+                dataGridView1.DataSource = db.tbl_students
+                    .Where(p => p.Name.EndsWith(TxtAD.Text)).ToList();
+            }           
+            if (radioButton7.Checked)
+            {
+                bool deger = db.tbl_students.Any();
+                MessageBox.Show(deger.ToString());
+            }    if (radioButton8.Checked)
+            {
+                int count = db.tbl_students.Count();
+                MessageBox.Show(count.ToString());
+            }
         }
     }
 }

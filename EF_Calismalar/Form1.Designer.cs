@@ -29,7 +29,7 @@ namespace EF_Calismalar
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnOgrenciListele = new System.Windows.Forms.Button();
             this.BtnKaydet = new System.Windows.Forms.Button();
             this.BtnSil = new System.Windows.Forms.Button();
@@ -45,6 +45,7 @@ namespace EF_Calismalar
             this.TxtOgrenciID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.BtnDersKaydet = new System.Windows.Forms.Button();
             this.TxtDersAdi = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.TxtDersId = new System.Windows.Forms.TextBox();
@@ -65,8 +66,16 @@ namespace EF_Calismalar
             this.BtnDersListele = new System.Windows.Forms.Button();
             this.BtnNotListele = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.BtnDersKaydet = new System.Windows.Forms.Button();
             this.BtnProcedure = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.LinqEntity = new System.Windows.Forms.Button();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.radioButton7 = new System.Windows.Forms.RadioButton();
+            this.radioButton8 = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -171,6 +180,7 @@ namespace EF_Calismalar
             this.TxtSOYAD.Name = "TxtSOYAD";
             this.TxtSOYAD.Size = new System.Drawing.Size(100, 20);
             this.TxtSOYAD.TabIndex = 19;
+            this.TxtSOYAD.TextChanged += new System.EventHandler(this.TxtSOYAD_TextChanged);
             // 
             // label3
             // 
@@ -229,6 +239,17 @@ namespace EF_Calismalar
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ders";
             // 
+            // BtnDersKaydet
+            // 
+            this.BtnDersKaydet.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BtnDersKaydet.Location = new System.Drawing.Point(55, 89);
+            this.BtnDersKaydet.Name = "BtnDersKaydet";
+            this.BtnDersKaydet.Size = new System.Drawing.Size(55, 37);
+            this.BtnDersKaydet.TabIndex = 22;
+            this.BtnDersKaydet.Text = "Kaydet";
+            this.BtnDersKaydet.UseVisualStyleBackColor = true;
+            this.BtnDersKaydet.Click += new System.EventHandler(this.BtnDersKaydet_Click);
+            // 
             // TxtDersAdi
             // 
             this.TxtDersAdi.Location = new System.Drawing.Point(80, 57);
@@ -276,7 +297,7 @@ namespace EF_Calismalar
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.TxtSinav1);
             this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Location = new System.Drawing.Point(721, 229);
+            this.groupBox3.Location = new System.Drawing.Point(620, 223);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(184, 223);
             this.groupBox3.TabIndex = 22;
@@ -407,10 +428,10 @@ namespace EF_Calismalar
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -420,17 +441,6 @@ namespace EF_Calismalar
             this.dataGridView1.Size = new System.Drawing.Size(607, 371);
             this.dataGridView1.TabIndex = 25;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-            // 
-            // BtnDersKaydet
-            // 
-            this.BtnDersKaydet.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BtnDersKaydet.Location = new System.Drawing.Point(55, 89);
-            this.BtnDersKaydet.Name = "BtnDersKaydet";
-            this.BtnDersKaydet.Size = new System.Drawing.Size(55, 37);
-            this.BtnDersKaydet.TabIndex = 22;
-            this.BtnDersKaydet.Text = "Kaydet";
-            this.BtnDersKaydet.UseVisualStyleBackColor = true;
-            this.BtnDersKaydet.Click += new System.EventHandler(this.BtnDersKaydet_Click);
             // 
             // BtnProcedure
             // 
@@ -443,6 +453,105 @@ namespace EF_Calismalar
             this.BtnProcedure.UseVisualStyleBackColor = true;
             this.BtnProcedure.Click += new System.EventHandler(this.BtnProcedure_Click);
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(831, 174);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(121, 17);
+            this.radioButton1.TabIndex = 27;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Ada göre sırala A->Z";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // LinqEntity
+            // 
+            this.LinqEntity.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.LinqEntity.Location = new System.Drawing.Point(840, 377);
+            this.LinqEntity.Name = "LinqEntity";
+            this.LinqEntity.Size = new System.Drawing.Size(59, 37);
+            this.LinqEntity.TabIndex = 28;
+            this.LinqEntity.Text = "Linq Entity";
+            this.LinqEntity.UseVisualStyleBackColor = true;
+            this.LinqEntity.Click += new System.EventHandler(this.LinqEntity_Click);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(831, 197);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(121, 17);
+            this.radioButton2.TabIndex = 29;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Ada göre sırala Z->A";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(831, 220);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(91, 17);
+            this.radioButton3.TabIndex = 30;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "3 eleman getir";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(831, 243);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(96, 17);
+            this.radioButton4.TabIndex = 31;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "ID\'ye göre getir";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Location = new System.Drawing.Point(831, 266);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(134, 17);
+            this.radioButton5.TabIndex = 32;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "Baş harfi _ olanları getir";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Location = new System.Drawing.Point(831, 289);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(135, 17);
+            this.radioButton6.TabIndex = 33;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "Son harfi _ olanları getir";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            // 
+            // radioButton7
+            // 
+            this.radioButton7.AutoSize = true;
+            this.radioButton7.Location = new System.Drawing.Point(830, 312);
+            this.radioButton7.Name = "radioButton7";
+            this.radioButton7.Size = new System.Drawing.Size(93, 17);
+            this.radioButton7.TabIndex = 34;
+            this.radioButton7.TabStop = true;
+            this.radioButton7.Text = "Deger Var Mı?";
+            this.radioButton7.UseVisualStyleBackColor = true;
+            // 
+            // radioButton8
+            // 
+            this.radioButton8.AutoSize = true;
+            this.radioButton8.Location = new System.Drawing.Point(829, 335);
+            this.radioButton8.Name = "radioButton8";
+            this.radioButton8.Size = new System.Drawing.Size(128, 17);
+            this.radioButton8.TabIndex = 35;
+            this.radioButton8.TabStop = true;
+            this.radioButton8.Text = "Toplam ogrenci sayisii";
+            this.radioButton8.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -450,6 +559,15 @@ namespace EF_Calismalar
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1018, 470);
+            this.Controls.Add(this.radioButton8);
+            this.Controls.Add(this.radioButton7);
+            this.Controls.Add(this.radioButton6);
+            this.Controls.Add(this.radioButton5);
+            this.Controls.Add(this.radioButton4);
+            this.Controls.Add(this.radioButton3);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.LinqEntity);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.BtnProcedure);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BtnNotListele);
@@ -472,6 +590,7 @@ namespace EF_Calismalar
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -513,6 +632,15 @@ namespace EF_Calismalar
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button BtnDersKaydet;
         private System.Windows.Forms.Button BtnProcedure;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Button LinqEntity;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.RadioButton radioButton7;
+        private System.Windows.Forms.RadioButton radioButton8;
     }
 }
 
