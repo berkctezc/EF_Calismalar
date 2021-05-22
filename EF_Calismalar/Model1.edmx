@@ -65,6 +65,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="notlistesi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="DbOgrenciSinavModelStoreContainer">
           <EntitySet Name="tbl_clubs" EntityType="Self.tbl_clubs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_grades" EntityType="Self.tbl_grades" Schema="dbo" store:Type="Tables" />
@@ -153,6 +154,7 @@
             <End Role="tbl_grades" EntitySet="tbl_grades" />
           </AssociationSet>
           <EntitySet Name="tbl_clubs" EntityType="DbOgrenciSinavModel.tbl_clubs" />
+          <FunctionImport Name="notlistesi" ReturnType="Collection(DbOgrenciSinavModel.notlistesi_Result)" />
         </EntityContainer>
         <EntityType Name="tbl_clubs">
           <Key>
@@ -161,6 +163,16 @@
           <Property Name="Id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ClubName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
+        <ComplexType Name="notlistesi_Result">
+          <Property Type="Int32" Name="notid" Nullable="false" />
+          <Property Type="String" Name="ad_soyad" Nullable="true" MaxLength="41" />
+          <Property Type="String" Name="dersadi" Nullable="true" MaxLength="50" />
+          <Property Type="Int16" Name="exam1" Nullable="true" />
+          <Property Type="Int16" Name="exam2" Nullable="true" />
+          <Property Type="Int16" Name="exam3" Nullable="true" />
+          <Property Type="Decimal" Name="average" Nullable="true" Precision="5" Scale="2" />
+          <Property Type="Int32" Name="state" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -207,6 +219,20 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="notlistesi" FunctionName="DbOgrenciSinavModel.Store.notlistesi">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DbOgrenciSinavModel.notlistesi_Result">
+                <ScalarProperty Name="notid" ColumnName="notid" />
+                <ScalarProperty Name="ad_soyad" ColumnName="ad soyad" />
+                <ScalarProperty Name="dersadi" ColumnName="dersadi" />
+                <ScalarProperty Name="exam1" ColumnName="exam1" />
+                <ScalarProperty Name="exam2" ColumnName="exam2" />
+                <ScalarProperty Name="exam3" ColumnName="exam3" />
+                <ScalarProperty Name="average" ColumnName="average" />
+                <ScalarProperty Name="state" ColumnName="state" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -12,6 +12,8 @@ namespace EF_Calismalar
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class DbOgrenciSinavEntities : DbContext
     {
@@ -29,5 +31,10 @@ namespace EF_Calismalar
         public virtual DbSet<tbl_lessons> tbl_lessons { get; set; }
         public virtual DbSet<tbl_students> tbl_students { get; set; }
         public virtual DbSet<tbl_clubs> tbl_clubs { get; set; }
+    
+        public virtual ObjectResult<notlistesi_Result> notlistesi()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<notlistesi_Result>("notlistesi");
+        }
     }
 }
