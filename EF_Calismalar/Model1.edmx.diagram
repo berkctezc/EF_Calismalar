@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c792d480363a4aac9c36a03bb91724a5" Name="Diagram1">
+        <EntityTypeShape EntityType="DbOgrenciSinavModel.tbl_grades" Width="1.5" PointX="4.875" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbOgrenciSinavModel.tbl_lessons" Width="1.5" PointX="2.125" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbOgrenciSinavModel.tbl_students" Width="1.5" PointX="2.25" PointY="4.25" IsExpanded="true" />
+        <AssociationConnector Association="DbOgrenciSinavModel.FK_tbl_grades_tbl_lessons" ManuallyRouted="false" />
+        <AssociationConnector Association="DbOgrenciSinavModel.FK_tbl_grades_tbl_students" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
