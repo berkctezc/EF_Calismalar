@@ -98,6 +98,10 @@
     <Compile Include="Migrations\202105231515459_updated_state1.designer.cs">
       <DependentUpon>202105231515459_updated_state1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105231519553_updated_state2.cs" />
+    <Compile Include="Migrations\202105231519553_updated_state2.designer.cs">
+      <DependentUpon>202105231519553_updated_state2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -127,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105231515459_updated_state1.resx">
       <DependentUpon>202105231515459_updated_state1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105231519553_updated_state2.resx">
+      <DependentUpon>202105231519553_updated_state2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

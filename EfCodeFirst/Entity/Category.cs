@@ -6,7 +6,6 @@ namespace EfCodeFirst.Entity
     {
         public int Id { get; set; }
         public string Tag { get; set; }
-        public string Detail { get; set; }
         //bir kategoride çok ürün olacaktır o yüzden collection olarak tuttuk
         public ICollection<Product> Products { get; set; }
     }
