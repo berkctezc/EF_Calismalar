@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DbOgrenciSinavModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Brand" Type="varchar" MaxLength="50" />
+          <Property Name="Price" Type="int" />
+          <Property Name="Stock" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_clubs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClubName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_grades">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StudentId" Type="int" />
+          <Property Name="LessonId" Type="int" />
+          <Property Name="Exam1" Type="smallint" />
+          <Property Name="Exam2" Type="smallint" />
+          <Property Name="Exam3" Type="smallint" />
+          <Property Name="Average" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="State" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_lessons">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LessonName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_students">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="20" />
+          <Property Name="Surname" Type="varchar" MaxLength="20" />
+          <Property Name="Photo" Type="varchar" MaxLength="100" />
+          <Property Name="ClubId" Type="tinyint" />
+          <Property Name="City" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK_tbl_grades_tbl_lessons">
+          <End Role="tbl_lessons" Type="Self.tbl_lessons" Multiplicity="0..1" />
+          <End Role="tbl_grades" Type="Self.tbl_grades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_lessons">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tbl_grades">
+              <PropertyRef Name="LessonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_grades_tbl_students">
+          <End Role="tbl_students" Type="Self.tbl_students" Multiplicity="0..1" />
+          <End Role="tbl_grades" Type="Self.tbl_grades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_students">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tbl_grades">
+              <PropertyRef Name="StudentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_students_tbl_clubs">
+          <End Role="tbl_clubs" Type="Self.tbl_clubs" Multiplicity="0..1" />
+          <End Role="tbl_students" Type="Self.tbl_students" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_clubs">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tbl_students">
+              <PropertyRef Name="ClubId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="clubs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="DbOgrenciSinavModelStoreContainer">
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_clubs" EntityType="Self.tbl_clubs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_grades" EntityType="Self.tbl_grades" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_lessons" EntityType="Self.tbl_lessons" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_students" EntityType="Self.tbl_students" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_tbl_grades_tbl_lessons" Association="Self.FK_tbl_grades_tbl_lessons">
+            <End Role="tbl_lessons" EntitySet="tbl_lessons" />
+            <End Role="tbl_grades" EntitySet="tbl_grades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_grades_tbl_students" Association="Self.FK_tbl_grades_tbl_students">
+            <End Role="tbl_students" EntitySet="tbl_students" />
+            <End Role="tbl_grades" EntitySet="tbl_grades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_students_tbl_clubs" Association="Self.FK_tbl_students_tbl_clubs">
+            <End Role="tbl_clubs" EntitySet="tbl_clubs" />
+            <End Role="tbl_students" EntitySet="tbl_students" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DbOgrenciSinavModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DbOgrenciSinavEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_clubs" EntityType="DbOgrenciSinavModel.tbl_clubs" />
+          <EntitySet Name="tbl_grades" EntityType="DbOgrenciSinavModel.tbl_grades" />
+          <EntitySet Name="tbl_lessons" EntityType="DbOgrenciSinavModel.tbl_lessons" />
+          <EntitySet Name="tbl_students" EntityType="DbOgrenciSinavModel.tbl_students" />
+          <AssociationSet Name="FK_tbl_students_tbl_clubs" Association="DbOgrenciSinavModel.FK_tbl_students_tbl_clubs">
+            <End Role="tbl_clubs" EntitySet="tbl_clubs" />
+            <End Role="tbl_students" EntitySet="tbl_students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_grades_tbl_lessons" Association="DbOgrenciSinavModel.FK_tbl_grades_tbl_lessons">
+            <End Role="tbl_lessons" EntitySet="tbl_lessons" />
+            <End Role="tbl_grades" EntitySet="tbl_grades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_grades_tbl_students" Association="DbOgrenciSinavModel.FK_tbl_grades_tbl_students">
+            <End Role="tbl_students" EntitySet="tbl_students" />
+            <End Role="tbl_grades" EntitySet="tbl_grades" />
+          </AssociationSet>
+          <EntitySet Name="Products" EntityType="DbOgrenciSinavModel.Product" />
+          <FunctionImport Name="clubs" ReturnType="Collection(DbOgrenciSinavModel.clubs_Result)" />
+        </EntityContainer>
+        <EntityType Name="tbl_clubs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClubName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_students" Relationship="DbOgrenciSinavModel.FK_tbl_students_tbl_clubs" FromRole="tbl_clubs" ToRole="tbl_students" />
+        </EntityType>
+        <EntityType Name="tbl_grades">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudentId" Type="Int32" />
+          <Property Name="LessonId" Type="Int32" />
+          <Property Name="Exam1" Type="Int16" />
+          <Property Name="Exam2" Type="Int16" />
+          <Property Name="Exam3" Type="Int16" />
+          <Property Name="Average" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="State" Type="Int32" />
+          <NavigationProperty Name="tbl_lessons" Relationship="DbOgrenciSinavModel.FK_tbl_grades_tbl_lessons" FromRole="tbl_grades" ToRole="tbl_lessons" />
+          <NavigationProperty Name="tbl_students" Relationship="DbOgrenciSinavModel.FK_tbl_grades_tbl_students" FromRole="tbl_grades" ToRole="tbl_students" />
+        </EntityType>
+        <EntityType Name="tbl_lessons">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LessonName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_grades" Relationship="DbOgrenciSinavModel.FK_tbl_grades_tbl_lessons" FromRole="tbl_lessons" ToRole="tbl_grades" />
+        </EntityType>
+        <EntityType Name="tbl_students">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Surname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Photo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ClubId" Type="Byte" />
+          <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_clubs" Relationship="DbOgrenciSinavModel.FK_tbl_students_tbl_clubs" FromRole="tbl_students" ToRole="tbl_clubs" />
+          <NavigationProperty Name="tbl_grades" Relationship="DbOgrenciSinavModel.FK_tbl_grades_tbl_students" FromRole="tbl_students" ToRole="tbl_grades" />
+        </EntityType>
+        <Association Name="FK_tbl_students_tbl_clubs">
+          <End Type="DbOgrenciSinavModel.tbl_clubs" Role="tbl_clubs" Multiplicity="0..1" />
+          <End Type="DbOgrenciSinavModel.tbl_students" Role="tbl_students" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_clubs">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tbl_students">
+              <PropertyRef Name="ClubId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_grades_tbl_lessons">
+          <End Type="DbOgrenciSinavModel.tbl_lessons" Role="tbl_lessons" Multiplicity="0..1" />
+          <End Type="DbOgrenciSinavModel.tbl_grades" Role="tbl_grades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_lessons">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tbl_grades">
+              <PropertyRef Name="LessonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_grades_tbl_students">
+          <End Type="DbOgrenciSinavModel.tbl_students" Role="tbl_students" Multiplicity="0..1" />
+          <End Type="DbOgrenciSinavModel.tbl_grades" Role="tbl_grades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_students">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tbl_grades">
+              <PropertyRef Name="StudentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="Stock" Type="Int32" />
+        </EntityType>
+        <ComplexType Name="clubs_Result">
+          <Property Type="String" Name="name" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="surname" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="city" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="clubname" Nullable="true" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DbOgrenciSinavModelStoreContainer" CdmEntityContainer="DbOgrenciSinavEntities">
+          <EntitySetMapping Name="tbl_clubs">
+            <EntityTypeMapping TypeName="DbOgrenciSinavModel.tbl_clubs">
+              <MappingFragment StoreEntitySet="tbl_clubs">
+                <ScalarProperty Name="ClubName" ColumnName="ClubName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_grades">
+            <EntityTypeMapping TypeName="DbOgrenciSinavModel.tbl_grades">
+              <MappingFragment StoreEntitySet="tbl_grades">
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Average" ColumnName="Average" />
+                <ScalarProperty Name="Exam3" ColumnName="Exam3" />
+                <ScalarProperty Name="Exam2" ColumnName="Exam2" />
+                <ScalarProperty Name="Exam1" ColumnName="Exam1" />
+                <ScalarProperty Name="LessonId" ColumnName="LessonId" />
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_lessons">
+            <EntityTypeMapping TypeName="DbOgrenciSinavModel.tbl_lessons">
+              <MappingFragment StoreEntitySet="tbl_lessons">
+                <ScalarProperty Name="LessonName" ColumnName="LessonName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_students">
+            <EntityTypeMapping TypeName="DbOgrenciSinavModel.tbl_students">
+              <MappingFragment StoreEntitySet="tbl_students">
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="ClubId" ColumnName="ClubId" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="DbOgrenciSinavModel.Product">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="clubs" FunctionName="DbOgrenciSinavModel.Store.clubs">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DbOgrenciSinavModel.clubs_Result">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="clubname" ColumnName="clubname" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

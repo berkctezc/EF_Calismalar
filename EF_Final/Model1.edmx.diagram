@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6716cc03889d40eba8136801d37d31fa" Name="Diagram1" ZoomLevel="98">
+        <EntityTypeShape EntityType="DbOgrenciSinavModel.tbl_clubs" Width="1.5" PointX="0.75" PointY="1.625" />
+        <EntityTypeShape EntityType="DbOgrenciSinavModel.tbl_grades" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="DbOgrenciSinavModel.tbl_lessons" Width="1.5" PointX="3" PointY="5.625" />
+        <EntityTypeShape EntityType="DbOgrenciSinavModel.tbl_students" Width="1.5" PointX="3" PointY="1.125" />
+        <AssociationConnector Association="DbOgrenciSinavModel.FK_tbl_students_tbl_clubs" />
+        <AssociationConnector Association="DbOgrenciSinavModel.FK_tbl_grades_tbl_lessons" />
+        <AssociationConnector Association="DbOgrenciSinavModel.FK_tbl_grades_tbl_students" />
+        <EntityTypeShape EntityType="DbOgrenciSinavModel.Product" Width="1.5" PointX="5.375" PointY="4.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
