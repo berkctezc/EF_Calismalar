@@ -76,6 +76,12 @@ namespace EF_Calismalar
             this.radioButton6 = new System.Windows.Forms.RadioButton();
             this.radioButton7 = new System.Windows.Forms.RadioButton();
             this.radioButton8 = new System.Windows.Forms.RadioButton();
+            this.radioButton9 = new System.Windows.Forms.RadioButton();
+            this.radioButton10 = new System.Windows.Forms.RadioButton();
+            this.radioButtonA = new System.Windows.Forms.RadioButton();
+            this.radioButton11 = new System.Windows.Forms.RadioButton();
+            this.radioButton12 = new System.Windows.Forms.RadioButton();
+            this.BtnJoin = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -232,9 +238,9 @@ namespace EF_Calismalar
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.TxtDersId);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Location = new System.Drawing.Point(822, 32);
+            this.groupBox2.Location = new System.Drawing.Point(822, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(184, 131);
+            this.groupBox2.Size = new System.Drawing.Size(148, 131);
             this.groupBox2.TabIndex = 22;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ders";
@@ -242,7 +248,7 @@ namespace EF_Calismalar
             // BtnDersKaydet
             // 
             this.BtnDersKaydet.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BtnDersKaydet.Location = new System.Drawing.Point(55, 89);
+            this.BtnDersKaydet.Location = new System.Drawing.Point(17, 73);
             this.BtnDersKaydet.Name = "BtnDersKaydet";
             this.BtnDersKaydet.Size = new System.Drawing.Size(55, 37);
             this.BtnDersKaydet.TabIndex = 22;
@@ -252,7 +258,7 @@ namespace EF_Calismalar
             // 
             // TxtDersAdi
             // 
-            this.TxtDersAdi.Location = new System.Drawing.Point(80, 57);
+            this.TxtDersAdi.Location = new System.Drawing.Point(35, 47);
             this.TxtDersAdi.Name = "TxtDersAdi";
             this.TxtDersAdi.Size = new System.Drawing.Size(100, 20);
             this.TxtDersAdi.TabIndex = 17;
@@ -260,7 +266,7 @@ namespace EF_Calismalar
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 57);
+            this.label7.Location = new System.Drawing.Point(4, 50);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(25, 13);
             this.label7.TabIndex = 16;
@@ -268,7 +274,7 @@ namespace EF_Calismalar
             // 
             // TxtDersId
             // 
-            this.TxtDersId.Location = new System.Drawing.Point(80, 24);
+            this.TxtDersId.Location = new System.Drawing.Point(35, 14);
             this.TxtDersId.Name = "TxtDersId";
             this.TxtDersId.Size = new System.Drawing.Size(100, 20);
             this.TxtDersId.TabIndex = 15;
@@ -276,7 +282,7 @@ namespace EF_Calismalar
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 24);
+            this.label8.Location = new System.Drawing.Point(4, 17);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(21, 13);
             this.label8.TabIndex = 14;
@@ -445,9 +451,9 @@ namespace EF_Calismalar
             // BtnProcedure
             // 
             this.BtnProcedure.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BtnProcedure.Location = new System.Drawing.Point(239, 377);
+            this.BtnProcedure.Location = new System.Drawing.Point(240, 377);
             this.BtnProcedure.Name = "BtnProcedure";
-            this.BtnProcedure.Size = new System.Drawing.Size(69, 37);
+            this.BtnProcedure.Size = new System.Drawing.Size(65, 37);
             this.BtnProcedure.TabIndex = 26;
             this.BtnProcedure.Text = "Procedure";
             this.BtnProcedure.UseVisualStyleBackColor = true;
@@ -456,7 +462,7 @@ namespace EF_Calismalar
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(831, 174);
+            this.radioButton1.Location = new System.Drawing.Point(820, 149);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(121, 17);
             this.radioButton1.TabIndex = 27;
@@ -467,7 +473,7 @@ namespace EF_Calismalar
             // LinqEntity
             // 
             this.LinqEntity.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LinqEntity.Location = new System.Drawing.Point(840, 377);
+            this.LinqEntity.Location = new System.Drawing.Point(829, 409);
             this.LinqEntity.Name = "LinqEntity";
             this.LinqEntity.Size = new System.Drawing.Size(59, 37);
             this.LinqEntity.TabIndex = 28;
@@ -478,7 +484,7 @@ namespace EF_Calismalar
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(831, 197);
+            this.radioButton2.Location = new System.Drawing.Point(820, 164);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(121, 17);
             this.radioButton2.TabIndex = 29;
@@ -489,7 +495,7 @@ namespace EF_Calismalar
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(831, 220);
+            this.radioButton3.Location = new System.Drawing.Point(946, 149);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(91, 17);
             this.radioButton3.TabIndex = 30;
@@ -500,7 +506,7 @@ namespace EF_Calismalar
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(831, 243);
+            this.radioButton4.Location = new System.Drawing.Point(946, 164);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(96, 17);
             this.radioButton4.TabIndex = 31;
@@ -511,7 +517,7 @@ namespace EF_Calismalar
             // radioButton5
             // 
             this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(831, 266);
+            this.radioButton5.Location = new System.Drawing.Point(820, 184);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(134, 17);
             this.radioButton5.TabIndex = 32;
@@ -522,7 +528,7 @@ namespace EF_Calismalar
             // radioButton6
             // 
             this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(831, 289);
+            this.radioButton6.Location = new System.Drawing.Point(822, 200);
             this.radioButton6.Name = "radioButton6";
             this.radioButton6.Size = new System.Drawing.Size(135, 17);
             this.radioButton6.TabIndex = 33;
@@ -533,7 +539,7 @@ namespace EF_Calismalar
             // radioButton7
             // 
             this.radioButton7.AutoSize = true;
-            this.radioButton7.Location = new System.Drawing.Point(830, 312);
+            this.radioButton7.Location = new System.Drawing.Point(949, 184);
             this.radioButton7.Name = "radioButton7";
             this.radioButton7.Size = new System.Drawing.Size(93, 17);
             this.radioButton7.TabIndex = 34;
@@ -544,7 +550,7 @@ namespace EF_Calismalar
             // radioButton8
             // 
             this.radioButton8.AutoSize = true;
-            this.radioButton8.Location = new System.Drawing.Point(829, 335);
+            this.radioButton8.Location = new System.Drawing.Point(820, 220);
             this.radioButton8.Name = "radioButton8";
             this.radioButton8.Size = new System.Drawing.Size(128, 17);
             this.radioButton8.TabIndex = 35;
@@ -552,13 +558,85 @@ namespace EF_Calismalar
             this.radioButton8.Text = "Toplam ogrenci sayisii";
             this.radioButton8.UseVisualStyleBackColor = true;
             // 
+            // radioButton9
+            // 
+            this.radioButton9.AutoSize = true;
+            this.radioButton9.Location = new System.Drawing.Point(820, 243);
+            this.radioButton9.Name = "radioButton9";
+            this.radioButton9.Size = new System.Drawing.Size(92, 17);
+            this.radioButton9.TabIndex = 36;
+            this.radioButton9.TabStop = true;
+            this.radioButton9.Text = "Sinav1 toplam";
+            this.radioButton9.UseVisualStyleBackColor = true;
+            // 
+            // radioButton10
+            // 
+            this.radioButton10.AutoSize = true;
+            this.radioButton10.Location = new System.Drawing.Point(960, 200);
+            this.radioButton10.Name = "radioButton10";
+            this.radioButton10.Size = new System.Drawing.Size(73, 17);
+            this.radioButton10.TabIndex = 37;
+            this.radioButton10.TabStop = true;
+            this.radioButton10.Text = "Sinav1 ort";
+            this.radioButton10.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonA
+            // 
+            this.radioButtonA.AutoSize = true;
+            this.radioButtonA.Location = new System.Drawing.Point(817, 266);
+            this.radioButtonA.Name = "radioButtonA";
+            this.radioButtonA.Size = new System.Drawing.Size(217, 17);
+            this.radioButtonA.TabIndex = 38;
+            this.radioButtonA.TabStop = true;
+            this.radioButtonA.Text = "Sinav1 ortalamadan yuksek olan puanlar";
+            this.radioButtonA.UseVisualStyleBackColor = true;
+            // 
+            // radioButton11
+            // 
+            this.radioButton11.AutoSize = true;
+            this.radioButton11.Location = new System.Drawing.Point(957, 220);
+            this.radioButton11.Name = "radioButton11";
+            this.radioButton11.Size = new System.Drawing.Size(80, 17);
+            this.radioButton11.TabIndex = 39;
+            this.radioButton11.TabStop = true;
+            this.radioButton11.Text = "Sinav1 max";
+            this.radioButton11.UseVisualStyleBackColor = true;
+            // 
+            // radioButton12
+            // 
+            this.radioButton12.AutoSize = true;
+            this.radioButton12.Location = new System.Drawing.Point(957, 243);
+            this.radioButton12.Name = "radioButton12";
+            this.radioButton12.Size = new System.Drawing.Size(77, 17);
+            this.radioButton12.TabIndex = 40;
+            this.radioButton12.TabStop = true;
+            this.radioButton12.Text = "Sinav1 min";
+            this.radioButton12.UseVisualStyleBackColor = true;
+            // 
+            // BtnJoin
+            // 
+            this.BtnJoin.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BtnJoin.Location = new System.Drawing.Point(440, 377);
+            this.BtnJoin.Name = "BtnJoin";
+            this.BtnJoin.Size = new System.Drawing.Size(65, 37);
+            this.BtnJoin.TabIndex = 41;
+            this.BtnJoin.Text = "JoinGet";
+            this.BtnJoin.UseVisualStyleBackColor = true;
+            this.BtnJoin.Click += new System.EventHandler(this.BtnJoin_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1018, 470);
+            this.ClientSize = new System.Drawing.Size(1046, 470);
+            this.Controls.Add(this.BtnJoin);
+            this.Controls.Add(this.radioButton12);
+            this.Controls.Add(this.radioButton11);
+            this.Controls.Add(this.radioButtonA);
+            this.Controls.Add(this.radioButton10);
+            this.Controls.Add(this.radioButton9);
             this.Controls.Add(this.radioButton8);
             this.Controls.Add(this.radioButton7);
             this.Controls.Add(this.radioButton6);
@@ -641,6 +719,12 @@ namespace EF_Calismalar
         private System.Windows.Forms.RadioButton radioButton6;
         private System.Windows.Forms.RadioButton radioButton7;
         private System.Windows.Forms.RadioButton radioButton8;
+        private System.Windows.Forms.RadioButton radioButton9;
+        private System.Windows.Forms.RadioButton radioButton10;
+        private System.Windows.Forms.RadioButton radioButtonA;
+        private System.Windows.Forms.RadioButton radioButton11;
+        private System.Windows.Forms.RadioButton radioButton12;
+        private System.Windows.Forms.Button BtnJoin;
     }
 }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Design.Serialization;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -13,7 +14,6 @@ namespace EF_Calismalar
 {
     public partial class Form1 : Form
     {
-
         internal DbOgrenciSinavEntities db = new DbOgrenciSinavEntities();
         public Form1()
         {
@@ -50,8 +50,9 @@ namespace EF_Calismalar
                         select new
                         {
                             item.Id,
-                            item.StudentId,
-                            item.LessonId,
+                            item.tbl_students.Name,
+                            item.tbl_students.Surname,
+                            item.tbl_lessons.LessonName,
                             item.Exam1,
                             item.Exam2,
                             item.Exam3,
@@ -157,16 +158,69 @@ namespace EF_Calismalar
             {
                 dataGridView1.DataSource = db.tbl_students
                     .Where(p => p.Name.EndsWith(TxtAD.Text)).ToList();
-            }           
+            }
             if (radioButton7.Checked)
             {
                 bool deger = db.tbl_students.Any();
                 MessageBox.Show(deger.ToString());
-            }    if (radioButton8.Checked)
+            }
+            if (radioButton8.Checked)
             {
                 int count = db.tbl_students.Count();
                 MessageBox.Show(count.ToString());
             }
+            if (radioButton9.Checked)
+            {
+                var sum = db.tbl_grades.Sum(x => x.Exam1);
+                MessageBox.Show(sum.ToString());
+            }
+            if (radioButton10.Checked)
+            {
+                var avg = db.tbl_grades.Average(x => x.Exam1);
+                MessageBox.Show(avg.ToString());
+            }
+            if (radioButtonA.Checked)
+            {
+                var avg = Math.Round((double)db.tbl_grades.Average(x => x.Exam1));
+                dataGridView1.DataSource = db.tbl_grades.Where(x => x.Exam1 >= avg).ToList();
+                dataGridView1.Columns[dataGridView1.Columns.Count - 1].Visible = false;
+                dataGridView1.Columns[dataGridView1.Columns.Count - 2].Visible = false;
+                dataGridView1.Columns[dataGridView1.Columns.Count - 3].Visible = false;
+                dataGridView1.Columns[dataGridView1.Columns.Count - 4].Visible = false;
+            }
+            if (radioButton11.Checked)
+            {
+                var max = db.tbl_grades.Max(x => x.Exam1);
+                var maxStudent = db.tbl_grades.SingleOrDefault(x => x.Exam1 == max).StudentId;
+                dataGridView1.DataSource = db.tbl_students.Where(x => x.Id == maxStudent).ToList();
+                dataGridView1.Columns[dataGridView1.Columns.Count - 1].Visible = false;
+                dataGridView1.Columns[dataGridView1.Columns.Count - 2].Visible = false;
+                MessageBox.Show(max.ToString());
+            }
+            if (radioButton12.Checked)
+            {
+                var max = db.tbl_grades.Min(x => x.Exam1);
+                MessageBox.Show(max.ToString());
+            }
+        }
+
+        private void BtnJoin_Click(object sender, EventArgs e)
+        {
+            var q = from d1 in db.tbl_grades
+                    join d2 in db.tbl_students
+                        on d1.StudentId equals d2.Id
+                    join d3 in db.tbl_lessons
+                        on d1.LessonId equals d3.Id
+                    select new
+                    {
+                        Student = d2.Name + " " + d2.Surname,
+                        LessonName=d3.LessonName,
+                        Exam1 = d1.Exam1,
+                        Exam2 = d1.Exam2,
+                        Exam3 = d1.Exam3,
+                        Avg=d1.Average
+                    };
+            dataGridView1.DataSource = q.ToList();
         }
     }
 }
