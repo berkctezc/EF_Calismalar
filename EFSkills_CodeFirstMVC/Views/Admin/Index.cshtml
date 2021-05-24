@@ -1,0 +1,23 @@
+﻿@using EFSkills_CodeFirstMVC.Models.Classes
+@model List<Skill>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutNavbar.cshtml";
+}
+<table class="table table-responsive">
+    <tr>
+        <th>ID</th>
+        <th>Skill</th>
+        <th>Value</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Desc</td>
+            <td>@item.Value</td>
+        </tr>
+    }
+
+</table>
