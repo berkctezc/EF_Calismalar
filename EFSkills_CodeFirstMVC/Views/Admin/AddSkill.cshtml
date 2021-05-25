@@ -1,0 +1,17 @@
+﻿@model EFSkills_CodeFirstMVC.Models.Classes.Skill
+@{
+    ViewBag.Title = "AddSkill";
+    Layout = "~/Views/Shared/_LayoutNavbar.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>Yetenek Açıklama</label>
+        @Html.TextBoxFor(x => x.Desc, new { @class = "form-control" })
+    </div>    
+    <div>
+        <label>Yetenek Degeri</label>
+        @Html.TextBoxFor(x => x.Value, new { @class = "form-control" })
+    </div>
+    <button class=="btn btn-primary">Ekle</button>
+</form>
